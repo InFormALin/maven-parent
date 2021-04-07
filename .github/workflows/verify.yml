@@ -3,7 +3,7 @@ name: Maven Verify
 on:
   push: # Ignore releases and main dev branch
     tags-ignore:
-      - 'v*' 
+      - 'v*'
     branches-ignore:
      - 'main'
   pull_request:
@@ -23,7 +23,7 @@ jobs:
     - uses: actions/setup-java@v2
       with:
         java-version: 15
-        
+        distribution: 'zulu'
     - name: Cache Maven Packages
       uses: actions/cache@v2.1.4
       with:
@@ -35,7 +35,7 @@ jobs:
       uses: whelk-io/maven-settings-xml-action@v14
       with:
         servers: '[{ "id": "github", "username": "x-access-token", "password": "${{ secrets.GITHUB_TOKEN }}" }]'
-        
+
     - name: Verify with Maven
       run: mvn -B -U verify
 
