@@ -20,6 +20,6 @@ The Parent for all (sub) projects of InFormALin.
 	<groupId>edu.kit.kastel.informalin</groupId>
 	<artifactId>parent</artifactId>
 	<!-- Just use the version you want. -->
-	<version>0.2-SNAPSHOT</version>
+	<version>0.3-SNAPSHOT</version>
 </parent>
 ```
